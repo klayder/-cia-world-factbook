@@ -1,0 +1,49 @@
+<div>
+    <h2>Country with biggest population</h2>
+    <p>
+        <strong>Name:</strong>
+        <%= @country_with_biggest_population['name'] %>
+    </p>    
+    <p>
+        <strong>Population:</strong>
+        <%= @country_with_biggest_population['population'] %>
+    </p>
+</div>
+
+<div>
+    
+    <h2>Countries with biggest inflation</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Inflation</th>
+        </tr>
+        <% @highest_inflation_countries.each do |country| %>
+            <tr>
+                <td><%= country['name'] %></td>
+                <td><%= country['inflation'] %></td>
+            </tr>
+        <% end %>
+    </table>    
+</div>
+
+<div>
+    <h2>Continents list</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Countries</th>
+        </tr>
+        <% @continents.collect do |continent, contries| %>
+            <tr>
+                <td>
+                    <%= continent %>
+                </td>   
+                <td>
+                    <%= contries[0, 5].join(', ')%> 
+                    <%= "and #{contries.length - 5} more..." if contries.length > 5  %>
+                </td>
+            </tr>
+        <% end %>
+    </table>    
+</div>
