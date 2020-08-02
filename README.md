@@ -1,24 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Необходимо:
+* Найти и вывести страну с наибольшим населением.
+* Вывести 5 стран с наибольшим уровнем инфляции (указать уровень).
+* Какие континенты представлены в файле? Вывести в алфавитном порядке континенты и страны, принадлежащие им.
