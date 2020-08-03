@@ -1,12 +1,13 @@
+<h2>World data</h2>
 <div>
     <h2>Country with biggest population</h2>
     <p>
         <strong>Name:</strong>
-        <%= @country_with_biggest_population['name'] %>
+        <%= link_to @country_with_biggest_population[:name], "countries/#{@country_with_biggest_population[:name]}" %>
     </p>    
     <p>
         <strong>Population:</strong>
-        <%= @country_with_biggest_population['population'] %>
+        <%= @country_with_biggest_population[:population] %>
     </p>
 </div>
 
@@ -20,8 +21,8 @@
         </tr>
         <% @highest_inflation_countries.each do |country| %>
             <tr>
-                <td><%= country['name'] %></td>
-                <td><%= country['inflation'] %></td>
+                <td><%= link_to country[:name], "countries/#{country[:name]}" %></td>
+                <td><%= country[:inflation] %></td>
             </tr>
         <% end %>
     </table>    
@@ -40,8 +41,10 @@
                     <%= continent %>
                 </td>   
                 <td>
-                    <%= contries[0, 5].join(', ')%> 
-                    <%= "and #{contries.length - 5} more..." if contries.length > 5  %>
+                    <% contries[0, 5].map do |country| %> 
+                        <%= link_to country[:name], "countries/#{country[:name]}" %>,
+                    <% end %>
+                    <%= " and #{contries.length - 5} more..." if contries.length > 5  %>
                 </td>
             </tr>
         <% end %>
